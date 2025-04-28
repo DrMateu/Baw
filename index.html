@@ -17,8 +17,8 @@
     }
 
     body {
-      background-color: #000000;
-      color: #ffffff;
+      background-color: #121212;
+      color: #e0e0e0;
       font-family: 'VT323', monospace;
       overflow-x: hidden;
       position: relative;
@@ -42,12 +42,12 @@
       font-family: 'Nightfully Haunted', sans-serif;
       font-size: 3rem;
       padding: 20px 40px;
-      background: linear-gradient(45deg, #ff00ff, #00ffff);
+      background: linear-gradient(45deg, #505050, #d0d0d0);
       border: 5px solid #ffffff;
       border-radius: 20px;
       color: #ffffff;
-      text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff;
-      box-shadow: 0 0 30px #ff00ff;
+      text-shadow: 0 0 10px #505050, 0 0 20px #505050;
+      box-shadow: 0 0 30px #505050;
       cursor: pointer;
       animation: pulse 1.5s infinite alternate;
       transition: transform 0.3s;
@@ -69,8 +69,9 @@
       width: 100%;
       height: 100%;
       background-image: url('https://64.media.tumblr.com/321e9b23d9004584b165c436c8b2bd17/a4c22bb71cf61e67-6c/s1280x1920/70d789a7a85e1102edcc71e9108817f3c71fa4ec.jpg');
+      filter: grayscale(100%);
       background-size: cover;
-      opacity: 0.4;
+      opacity: 0.3;
       z-index: -1;
     }
 
@@ -81,8 +82,9 @@
       width: 100%;
       height: 100%;
       background-image: url('https://64.media.tumblr.com/82883a2ce6f43b921c457a014b444c72/d56342f0990d995b-dd/s500x750/136dd8928b107a8501bcb9571018eb986c5a54f5.gif');
+      filter: grayscale(100%);
       background-size: 100px;
-      opacity: 0.2;
+      opacity: 0.1;
       z-index: -1;
       pointer-events: none;
     }
@@ -118,15 +120,15 @@
       margin-bottom: 30px;
       padding: 20px;
       border-radius: 10px;
-      background: rgba(122, 122, 122, 0.5);
-      border: 2px solid #ff00ff;
+      background: rgba(50, 50, 50, 0.5);
+      border: 2px solid #a0a0a0;
     }
 
     h1 {
       font-family: 'Nightfully Haunted', sans-serif;
       font-size: 70px;
-      color: #ff00ff;
-      text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
+      color: #ffffff;
+      text-shadow: 0 0 10px #707070, 0 0 20px #707070;
       margin-bottom: 10px;
     }
 
@@ -149,7 +151,7 @@
     nav a:hover {
       text-decoration: underline;
       text-decoration-style: wavy;
-      color: #00ffff;
+      color: #d0d0d0;
     }
 
     .blink {
@@ -166,17 +168,17 @@
       margin-bottom: 40px;
       padding: 20px;
       border-radius: 10px;
-      background: rgba(122, 122, 122, 0.5);
-      border: 2px solid #ff00ff;
+      background: rgba(50, 50, 50, 0.5);
+      border: 2px solid #a0a0a0;
     }
 
     .section h2 {
       font-family: 'Mars-Project', sans-serif;
       font-size: 2rem;
-      color: #00ffff;
+      color: #ffffff;
       margin-bottom: 20px;
       text-align: center;
-      text-shadow: 0 0 5px #ff00ff;
+      text-shadow: 0 0 5px #a0a0a0;
     }
 
     .profile {
@@ -190,8 +192,8 @@
       height: 200px;
       border-radius: 50%;
       overflow: hidden;
-      border: 3px solid #ff00ff;
-      box-shadow: 0 0 20px #00ffff;
+      border: 3px solid #a0a0a0;
+      box-shadow: 0 0 20px #303030;
       margin-bottom: 20px;
       animation: spin 7s infinite linear;
     }
@@ -205,6 +207,7 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+      filter: grayscale(80%);
     }
 
     .contact-icons {
@@ -221,15 +224,16 @@
       width: 40px;
       height: 40px;
       border-radius: 5px;
+      filter: grayscale(100%);
     }
 
     .mood {
       text-align: center;
       margin: 20px 0;
       padding: 10px;
-      background: rgba(122, 122, 122, 0.5);
+      background: rgba(50, 50, 50, 0.5);
       border-radius: 10px;
-      border: 2px solid #00ffff;
+      border: 2px solid #808080;
     }
 
     .mood p {
@@ -243,6 +247,7 @@
       display: block;
       height: 40px;
       background-image: url(https://64.media.tumblr.com/7c0690311dfb397f61ed4ca4ecd6574a/74e9fc14723ec355-c1/s500x750/b3031bd8aeecd3020086f5da45204b3f4daa90bf.gif);
+      filter: grayscale(100%);
       background-repeat: no-repeat;
       background-position-x: center;
       background-size: 200px;
@@ -274,13 +279,14 @@
       width: 80px;
       height: 80px;
       border-radius: 10px;
-      border: 2px solid #00ffff;
+      border: 2px solid #808080;
       transition: transform 0.3s;
+      filter: grayscale(100%);
     }
 
     .friend img:hover {
       transform: scale(1.1);
-      border-color: #ff00ff;
+      border-color: #ffffff;
     }
 
     .friend p {
@@ -291,11 +297,11 @@
     .marquee {
       width: 100%;
       overflow: hidden;
-      background: rgba(0, 0, 0, 0.5);
+      background: rgba(30, 30, 30, 0.5);
       padding: 10px 0;
       margin: 20px 0;
-      border-top: 1px solid #ff00ff;
-      border-bottom: 1px solid #ff00ff;
+      border-top: 1px solid #a0a0a0;
+      border-bottom: 1px solid #a0a0a0;
     }
 
     .marquee-content {
@@ -318,8 +324,8 @@
       height: 100px;
       margin-bottom: 10px;
       padding: 10px;
-      background: rgba(0, 0, 0, 0.7);
-      border: 2px solid #00ffff;
+      background: rgba(30, 30, 30, 0.7);
+      border: 2px solid #808080;
       border-radius: 5px;
       color: #ffffff;
       font-family: 'VT323', monospace;
@@ -328,7 +334,7 @@
 
     .guestbook button {
       padding: 8px 16px;
-      background: linear-gradient(45deg, #ff00ff, #00ffff);
+      background: linear-gradient(45deg, #404040, #d0d0d0);
       border: none;
       border-radius: 5px;
       color: #ffffff;
@@ -343,6 +349,10 @@
       bottom: 9px;
       z-index: 200;
       max-height: 400px;
+    }
+
+    .floating-gif img {
+      filter: grayscale(100%);
     }
 
     /* Vinyl Gallery from provided code */
@@ -378,8 +388,9 @@
       transform: rotateX(0deg) rotateY(25deg)!important;
       transform-style: preserve-3d!important;
       border-radius: 4px!important;
-      border: 2px solid rgba(0, 0, 0, 0.1)!important;
+      border: 2px solid rgba(160, 160, 160, 0.5)!important;
       object-fit: cover!important;
+      filter: grayscale(100%)!important;
     }
    
     #vinyl-gallery .vinyl:hover img {
@@ -409,9 +420,9 @@
       padding: 20px;
       margin-top: 40px;
       font-size: 0.8rem;
-      background: rgba(122, 122, 122, 0.5);
+      background: rgba(50, 50, 50, 0.5);
       border-radius: 10px;
-      border: 2px solid #ff00ff;
+      border: 2px solid #a0a0a0;
     }
 
     .visitor-counter {
@@ -422,15 +433,15 @@
       display: inline-block;
       width: 30px;
       height: 40px;
-      background: rgba(0, 0, 0, 0.7);
-      color: #00ffff;
+      background: rgba(30, 30, 30, 0.7);
+      color: #ffffff;
       font-size: 1.5rem;
       text-align: center;
       line-height: 40px;
       margin: 0 2px;
-      border: 1px solid #ff00ff;
+      border: 1px solid #808080;
       border-radius: 3px;
-      box-shadow: 0 0 5px #00ffff;
+      box-shadow: 0 0 5px #505050;
     }
 
     /* Custom scrollbar */
@@ -439,12 +450,12 @@
     }
 
     ::-webkit-scrollbar-track {
-      background: #000000;
-      border: 1px solid #ff00ff;
+      background: #121212;
+      border: 1px solid #808080;
     }
 
     ::-webkit-scrollbar-thumb {
-      background: linear-gradient(45deg, #ff00ff, #00ffff);
+      background: linear-gradient(45deg, #404040, #d0d0d0);
       border-radius: 5px;
     }
 
@@ -584,7 +595,7 @@
     /* Add hamburger menu for mobile navigation */
     .menu-toggle {
       display: none;
-      background: linear-gradient(45deg, #ff00ff, #00ffff);
+      background: linear-gradient(45deg, #404040, #d0d0d0);
       border: none;
       border-radius: 5px;
       color: white;
@@ -745,14 +756,14 @@
       <textarea placeholder="Leave your mark in my digital universe..."></textarea>
       <button>✧ Submit ✧</button>
       
-      <div style="margin-top: 30px; border-top: 1px dashed #ff00ff; padding-top: 20px;">
-        <div style="background: rgba(0,0,0,0.5); padding: 10px; margin-bottom: 15px; border-radius: 5px;">
-          <p style="color: #00ffff;">GoodBoss123</p>
+      <div style="margin-top: 30px; border-top: 1px dashed #808080; padding-top: 20px;">
+        <div style="background: rgba(30,30,30,0.5); padding: 10px; margin-bottom: 15px; border-radius: 5px;">
+          <p style="color: #d0d0d0;">GoodBoss123</p>
           <p>Brother, you are like a blood brother to me! Always there, in good times and bad. Maximum respect for you, the most loyal and strong man I know! <3</p>
           <p style="text-align: right; font-size: 0.8rem;">4/24/2025</p>
         </div>
-        <div style="background: rgba(0,0,0,0.5); padding: 10px; margin-bottom: 15px; border-radius: 5px;">
-          <p style="color: #00ffff;">sk8tr_boi_2000</p>
+        <div style="background: rgba(30,30,30,0.5); padding: 10px; margin-bottom: 15px; border-radius: 5px;">
+          <p style="color: #d0d0d0;">sk8tr_boi_2000</p>
           <p>thx 4 the add!! ur page is rly kewl</p>
           <p style="text-align: right; font-size: 0.8rem;">4/22/2025</p>
         </div>
