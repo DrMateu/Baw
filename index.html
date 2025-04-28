@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Baw's page</title>
+  <style>
+    @import url('https://fonts.cdnfonts.com/css/nightfully-haunted');
+    @import url('https://fonts.cdnfonts.com/css/mars-project');
+    @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+    
+    * {
+      cursor: url('https://cur.cursors-4u.net/cursors/cur-1/cur1.cur'), auto !important;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #000000;
+      color: #ffffff;
+      font-family: 'VT323', monospace;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    #entrance {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #000000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      transition: opacity 2s ease-in-out;
+    }
+
+    #enter-btn {
+      font-family: 'Nightfully Haunted', sans-serif;
+      font-size: 3rem;
+      padding: 20px 40px;
+      background: linear-gradient(45deg, #ff00ff, #00ffff);
+      border: 5px solid #ffffff;
+      border-radius: 20px;
+      color: #ffffff;
+      text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff;
+      box-shadow: 0 0 30px #ff00ff;
+      cursor: pointer;
+      animation: pulse 1.5s infinite alternate;
+      transition: transform 0.3s;
+    }
+
+    #enter-btn:hover {
+      transform: scale(1.1);
+    }
+
+    @keyframes pulse {
+      from { opacity: 0.7; }
+      to { opacity: 1; }
+    }
+
+    .background-scene {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('https://64.media.tumblr.com/321e9b23d9004584b165c436c8b2bd17/a4c22bb71cf61e67-6c/s1280x1920/70d789a7a85e1102edcc71e9108817f3c71fa4ec.jpg');
+      background-size: cover;
+      opacity: 0.4;
+      z-index: -1;
+    }
+
+    .glitter {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('https://64.media.tumblr.com/82883a2ce6f43b921c457a014b444c72/d56342f0990d995b-dd/s500x750/136dd8928b107a8501bcb9571018eb986c5a54f5.gif');
+      background-size: 100px;
+      opacity: 0.2;
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    .scanlines {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(rgb(141 141 141 / 48%) 50%, rgb(0 0 0 / 0%) 50%);
+      background-size: 100% 2px;
+      z-index: 999;
+      pointer-events: none;
+      opacity: 0.3;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 20px;
+      animation: float 4s infinite ease-in-out;
+    }
+
+    @keyframes float {
+      0% { transform: translate(0, 0px); }
+      50% { transform: translate(0, 8px); }
+      100% { transform: translate(0, -0px); }
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 30px;
+      padding: 20px;
+      border-radius: 10px;
+      background: rgba(122, 122, 122, 0.5);
+      border: 2px solid #ff00ff;
+    }
+
+    h1 {
+      font-family: 'Nightfully Haunted', sans-serif;
+      font-size: 70px;
+      color: #ff00ff;
+      text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
+      margin-bottom: 10px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      margin: 20px 0;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      margin: 0 15px;
+      color: #ffffff;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-size: 1.2rem;
+      position: relative;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+      text-decoration-style: wavy;
+      color: #00ffff;
+    }
+
+    .blink {
+      animation: blink 1s infinite;
+    }
+
+    @keyframes blink {
+      0% { opacity: 1; }
+      50% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+
+    .section {
+      margin-bottom: 40px;
+      padding: 20px;
+      border-radius: 10px;
+      background: rgba(122, 122, 122, 0.5);
+      border: 2px solid #ff00ff;
+    }
+
+    .section h2 {
+      font-family: 'Mars-Project', sans-serif;
+      font-size: 2rem;
+      color: #00ffff;
+      margin-bottom: 20px;
+      text-align: center;
+      text-shadow: 0 0 5px #ff00ff;
+    }
+
+    .profile {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .profile-pic {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 3px solid #ff00ff;
+      box-shadow: 0 0 20px #00ffff;
+      margin-bottom: 20px;
+      animation: spin 7s infinite linear;
+    }
+
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(-360deg); }
+    }
+
+    .profile-pic img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .contact-icons {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .contact-icons a {
+      margin: 0 10px;
+    }
+
+    .contact-icons img {
+      width: 40px;
+      height: 40px;
+      border-radius: 5px;
+    }
+
+    .mood {
+      text-align: center;
+      margin: 20px 0;
+      padding: 10px;
+      background: rgba(122, 122, 122, 0.5);
+      border-radius: 10px;
+      border: 2px solid #00ffff;
+    }
+
+    .mood p {
+      font-size: 1.2rem;
+      color: #ffffff;
+    }
+
+    .mood::after {
+      content: "";
+      white-space: pre-wrap;
+      display: block;
+      height: 40px;
+      background-image: url(https://64.media.tumblr.com/7c0690311dfb397f61ed4ca4ecd6574a/74e9fc14723ec355-c1/s500x750/b3031bd8aeecd3020086f5da45204b3f4daa90bf.gif);
+      background-repeat: no-repeat;
+      background-position-x: center;
+      background-size: 200px;
+      border-radius: 10px;
+    }
+
+    .blurbs {
+      text-align: left;
+    }
+
+    .blurbs p {
+      margin-bottom: 15px;
+      font-size: 1.1rem;
+      line-height: 1.4;
+    }
+
+    .friends-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .friend {
+      text-align: center;
+    }
+
+    .friend img {
+      width: 80px;
+      height: 80px;
+      border-radius: 10px;
+      border: 2px solid #00ffff;
+      transition: transform 0.3s;
+    }
+
+    .friend img:hover {
+      transform: scale(1.1);
+      border-color: #ff00ff;
+    }
+
+    .friend p {
+      margin-top: 5px;
+      font-size: 0.9rem;
+    }
+
+    .marquee {
+      width: 100%;
+      overflow: hidden;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 10px 0;
+      margin: 20px 0;
+      border-top: 1px solid #ff00ff;
+      border-bottom: 1px solid #ff00ff;
+    }
+
+    .marquee-content {
+      display: inline-block;
+      white-space: nowrap;
+      animation: marquee 20s linear infinite;
+    }
+
+    @keyframes marquee {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
+
+    .guestbook {
+      margin-top: 40px;
+    }
+
+    .guestbook textarea {
+      width: 100%;
+      height: 100px;
+      margin-bottom: 10px;
+      padding: 10px;
+      background: rgba(0, 0, 0, 0.7);
+      border: 2px solid #00ffff;
+      border-radius: 5px;
+      color: #ffffff;
+      font-family: 'VT323', monospace;
+      font-size: 1rem;
+    }
+
+    .guestbook button {
+      padding: 8px 16px;
+      background: linear-gradient(45deg, #ff00ff, #00ffff);
+      border: none;
+      border-radius: 5px;
+      color: #ffffff;
+      cursor: pointer;
+      font-family: 'VT323', monospace;
+      font-size: 1rem;
+    }
+
+    .floating-gif {
+      position: fixed;
+      right: 1px;
+      bottom: 9px;
+      z-index: 200;
+      max-height: 400px;
+    }
+
+    /* Vinyl Gallery from provided code */
+    #vinyl-gallery {
+      all: initial!important;
+      width: 100%!important;
+      height: 230px!important;
+      margin: 30px 0!important;
+      display: flex!important;
+      flex-direction: row!important;
+      position: relative!important;
+      margin-left: -6px!important;
+      overflow-x: auto!important;
+    }
+   
+    #vinyl-gallery .vinyl {
+      all:unset!important;
+      perspective: 500px !important;
+      width: 18px!important;
+      transition: width 0.5s!important;
+      flex-shrink: 0!important;
+    }
+   
+    #vinyl-gallery .vinyl:hover {
+      width: 148px!important;
+    }
+   
+    #vinyl-gallery img {
+      all:unset!important;
+      transition: transform 0.5s, width 0.5s, height 0.5s, margin-top 0.5s!important;
+      width: 180px!important;
+      height: 180px!important;
+      transform: rotateX(0deg) rotateY(25deg)!important;
+      transform-style: preserve-3d!important;
+      border-radius: 4px!important;
+      border: 2px solid rgba(0, 0, 0, 0.1)!important;
+      object-fit: cover!important;
+    }
+   
+    #vinyl-gallery .vinyl:hover img {
+      transform: rotateX(0deg) rotateY(10deg)!important;
+      width: 188px!important;
+      height: 188px!important;
+      margin-top: -2px!important;
+    }
+   
+    #vinyl-gallery .title {
+      color: #ffffff;
+      display: block;
+      visibility: hidden;
+      position: absolute;
+      bottom: 0px;
+      text-align: center;
+      width: 100%;
+      padding-left: 6px;
+    }
+   
+    #vinyl-gallery .vinyl:nth-child(n):hover + .title {
+      visibility: visible;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+      font-size: 0.8rem;
+      background: rgba(122, 122, 122, 0.5);
+      border-radius: 10px;
+      border: 2px solid #ff00ff;
+    }
+
+    .visitor-counter {
+      margin-top: 10px;
+    }
+
+    .counter-digit {
+      display: inline-block;
+      width: 30px;
+      height: 40px;
+      background: rgba(0, 0, 0, 0.7);
+      color: #00ffff;
+      font-size: 1.5rem;
+      text-align: center;
+      line-height: 40px;
+      margin: 0 2px;
+      border: 1px solid #ff00ff;
+      border-radius: 3px;
+      box-shadow: 0 0 5px #00ffff;
+    }
+
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #000000;
+      border: 1px solid #ff00ff;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: linear-gradient(45deg, #ff00ff, #00ffff);
+      border-radius: 5px;
+    }
+
+    /* Enhanced Media queries for better mobile responsiveness */
+    @media (max-width: 768px) {
+      .container {
+        padding: 10px;
+        width: 100%;
+      }
+      
+      h1 {
+        font-size: 40px;
+      }
+      
+      nav {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      nav a {
+        font-size: 1rem;
+        margin: 8px 0;
+      }
+      
+      .section {
+        padding: 15px;
+      }
+      
+      .section h2 {
+        font-size: 1.5rem;
+      }
+      
+      .profile-pic {
+        width: 150px;
+        height: 150px;
+      }
+      
+      .blurbs p {
+        font-size: 1rem;
+      }
+      
+      .floating-gif {
+        max-height: 150px;
+        right: 0;
+        bottom: 0;
+      }
+      
+      #enter-btn {
+        font-size: 2rem;
+        padding: 15px 30px;
+      }
+      
+      .friends-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      
+      #vinyl-gallery {
+        height: 180px!important;
+      }
+      
+      #vinyl-gallery img {
+        width: 140px!important;
+        height: 140px!important;
+      }
+      
+      #vinyl-gallery .vinyl:hover img {
+        width: 148px!important;
+        height: 148px!important;
+      }
+    }
+    
+    /* Additional media query for very small screens */
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 32px;
+      }
+      
+      .container {
+        padding: 5px;
+      }
+      
+      .section {
+        padding: 10px;
+      }
+      
+      .profile-pic {
+        width: 120px;
+        height: 120px;
+      }
+      
+      .friends-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      
+      .counter-digit {
+        width: 25px;
+        height: 30px;
+        font-size: 1.2rem;
+        line-height: 30px;
+      }
+      
+      .floating-gif {
+        max-height: 100px;
+      }
+      
+      .marquee-content {
+        font-size: 0.8rem;
+      }
+      
+      #vinyl-gallery {
+        height: 140px!important;
+      }
+      
+      #vinyl-gallery img {
+        width: 100px!important;
+        height: 100px!important;
+      }
+      
+      #vinyl-gallery .vinyl:hover img {
+        width: 108px!important;
+        height: 108px!important;
+      }
+      
+      /* Make vinyl gallery touch-friendly for mobile */
+      #vinyl-gallery .vinyl {
+        width: 80px!important;
+      }
+      
+      /* Adjust entrance button for very small screens */
+      #enter-btn {
+        font-size: 1.5rem;
+        padding: 10px 20px;
+        border-width: 3px;
+      }
+    }
+    
+    /* Add hamburger menu for mobile navigation */
+    .menu-toggle {
+      display: none;
+      background: linear-gradient(45deg, #ff00ff, #00ffff);
+      border: none;
+      border-radius: 5px;
+      color: white;
+      font-size: 1.5rem;
+      padding: 5px 10px;
+      margin-bottom: 10px;
+      cursor: pointer;
+    }
+    
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+        margin: 10px auto;
+      }
+      
+      nav.mobile-nav {
+        display: none;
+      }
+      
+      nav.mobile-nav.active {
+        display: flex;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Entrance screen -->
+  <div id="entrance">
+    <button id="enter-btn">Enter</button>
+  </div>
+
+  <!-- Background elements -->
+  <div class="background-scene"></div>
+  <div class="glitter"></div>
+  <div class="scanlines"></div>
+  
+  <!-- Floating GIF from provided code -->
+  <div class="floating-gif">
+    <img src="Dance1.gif" alt="Floating animation">
+  </div>
+
+  <div class="container">
+    <header>
+      <h1>About Baw</h1>
+      <button class="menu-toggle">☰ Menu</button>
+      <nav class="mobile-nav">
+        <a href="#about">About Me</a> •
+        <a href="#music" class="blink">Music</a> •
+        <a href="#friends">Friends</a> •
+        <a href="#guestbook">Guestbook</a>
+      </nav>
+    </header>
+
+    <div class="marquee">
+      <div class="marquee-content">
+        ★彡 WELCOME TO MY PERSONAL SPACE! PROFESIONAL YAPPER, BAD PROGRAMER AND ASS GAMES (People like ass so) ★彡
+      </div>
+    </div>
+
+    <div class="mood">
+      <p><b>Current Mood:</b> Freaky and happy :p ✧･ﾟ</p>
+    </div>
+
+    <section id="about" class="section profile">
+      <h2>~*~ About Me ~*~</h2>
+      <div class="profile-pic">
+        <img src="pfp.jpg" alt="Profile picture">
+      </div>
+      <div class="blurbs">
+        <p>~°•.¸♡ Hey there! Nah bro i am happy that you are her, idk why but people don't click on my site >: ♡¸.•°~</p>
+        <p>~°•.¸♡ I spend most of my time playing on my potato and i love to chat with people, so please do. ♡¸.•°~</p>
+        <p>~°•.¸♡ If you want to chat Discord: Xbawfr  ♡¸.•°~</p>
+      </div>
+      <div class="contact-icons">
+        <a href="#"><img src="https://64.media.tumblr.com/ad443b204405c527354ea9457b15869d/ddcd44d0d4b37efa-dc/s75x75_c1/827b0d26ead05b46f726416567f3a628aedc07ac.pnj" alt="Contact"></a>
+        <a href="#"><img src="https://64.media.tumblr.com/ad443b204405c527354ea9457b15869d/ddcd44d0d4b37efa-dc/s75x75_c1/827b0d26ead05b46f726416567f3a628aedc07ac.pnj" alt="Email"></a>
+        <a href="#"><img src="https://64.media.tumblr.com/ad443b204405c527354ea9457b15869d/ddcd44d0d4b37efa-dc/s75x75_c1/827b0d26ead05b46f726416567f3a628aedc07ac.pnj" alt="Instant Message"></a>
+        <a href="#"><img src="https://64.media.tumblr.com/ad443b204405c527354ea9457b15869d/ddcd44d0d4b37efa-dc/s75x75_c1/827b0d26ead05b46f726416567f3a628aedc07ac.pnj" alt="Social"></a>
+      </div>
+    </section>
+
+    <section id="music" class="section">
+      <h2>~*~ My Music Vibes ~*~</h2>
+      <p style="text-align: center; margin-bottom: 20px;">☆★☆ Hover over albums to see what I'm jamming to! ☆★☆</p>
+      
+      <!-- Vinyl gallery from provided code -->
+      <div id="vinyl-gallery">
+        <div class="vinyl">
+          <img src="Trick.jpg" alt="Album cover"/>
+        </div>
+        <div class="title">Trick - Alex G</div>
+      
+        <div class="vinyl">
+          <img src="LLL.jpg" alt="Album cover"/>
+        </div>
+        <div class="title">((lll) - Crystal Castles)</div>
+      
+        <div class="vinyl">
+          <img src="505.jpg" alt="Album cover"/>
+        </div>
+        <div class="title">Favourite Worst Nightmare - Mrctic Monkeys</div>
+      
+        <div class="vinyl">
+          <img src="Love.jpg" alt="Album cover"/>
+        </div>
+        <div class="title">i love you. - the neighbourhood</div>
+      
+        <div class="vinyl">
+          <img src="17.jpg" alt="Album cover"/>
+        </div>
+        <div class="title">17 - xxxtesticles</div>
+      
+        <div class="vinyl">
+          <img src="Bye.jpg" alt="Album cover"/>
+        </div>
+        <div class="title">Goodbye & Good Riddance - Juice WRLD</div>
+      
+        <div class="vinyl">
+          <img src="week.jpg" alt="Album cover"/>
+        </div>
+        <div class="title">After Hours - The Weeknd</div>
+      </div>
+    </section>
+
+    <section id="friends" class="section">
+      <h2>~*~ Favorite People  ~*~</h2>
+      <p style="text-align: center; margin-bottom: 20px;">☆★☆ Top Friends ☆★☆</p>
+      <div class="friends-grid">
+        <div class="friend">
+          <img src="Boss.jpg" alt="Friend">
+          <p>GoodBoss123</p>
+        </div>
+        <div class="friend">
+          <img src="Fras.jpg" alt="Friend">
+          <p>Unconfras</p>
+        </div>
+        <div class="friend">
+          <img src="James.jpg" alt="Friend">
+          <p>James Saphire</p>
+        </div>
+        <div class="friend">
+          <img src="/api/placeholder/80/80" alt="Friend">
+          <p>:o</p>
+        </div>
+        <div class="friend">
+          <img src="/api/placeholder/80/80" alt="Friend">
+          <p>:o</p>
+        </div>
+        <div class="friend">
+          <img src="/api/placeholder/80/80" alt="Friend">
+          <p>:o</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="guestbook" class="section guestbook">
+      <h2>~*~ Sign My Guestbook ~*~</h2>
+      <textarea placeholder="Leave your mark in my digital universe..."></textarea>
+      <button>✧ Submit ✧</button>
+      
+      <div style="margin-top: 30px; border-top: 1px dashed #ff00ff; padding-top: 20px;">
+        <div style="background: rgba(0,0,0,0.5); padding: 10px; margin-bottom: 15px; border-radius: 5px;">
+          <p style="color: #00ffff;">GoodBoss123</p>
+          <p>Brother, you are like a blood brother to me! Always there, in good times and bad. Maximum respect for you, the most loyal and strong man I know! <3</p>
+          <p style="text-align: right; font-size: 0.8rem;">4/24/2025</p>
+        </div>
+        <div style="background: rgba(0,0,0,0.5); padding: 10px; margin-bottom: 15px; border-radius: 5px;">
+          <p style="color: #00ffff;">sk8tr_boi_2000</p>
+          <p>thx 4 the add!! ur page is rly kewl</p>
+          <p style="text-align: right; font-size: 0.8rem;">4/22/2025</p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>✧･ﾟ: *✧･ﾟ:* Made with my fingers and with Mia on my desk *:･ﾟ✧*:･ﾟ✧</p>
+      <p>Copyright © 1-2025 | Last updated: 4/28/2025</p>
+      <div class="visitor-counter">
+        <p>Visitors:</p>
+        <div>
+          <span class="counter-digit">0</span>
+          <span class="counter-digit">0</span>
+          <span class="counter-digit">0</span>
+          <span class="counter-digit">4</span>
+          <span class="counter-digit">2</span>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    // Entrance animation
+    document.getElementById('enter-btn').addEventListener('click', function() {
+      document.getElementById('entrance').style.opacity = '0';
+      setTimeout(function() {
+        document.getElementById('entrance').style.display = 'none';
+      }, 2000);
+    });
+
+    // Generate random visitor counter on load
+    window.addEventListener('load', function() {
+      const counterDigits = document.querySelectorAll('.counter-digit');
+      for (let i = 0; i < counterDigits.length; i++) {
+        if (i < 2) continue; // Keep first two digits as 0
+        counterDigits[i].textContent = Math.floor(Math.random() * 10);
+      }
+    });
+    
+    // Mobile menu toggle
+    document.querySelector('.menu-toggle').addEventListener('click', function() {
+      document.querySelector('.mobile-nav').classList.toggle('active');
+    });
+    
+    // Fix image paths (using relative paths instead of absolute)
+    window.addEventListener('DOMContentLoaded', function() {
+      // Add touch support for mobile vinyl gallery
+      const vinyls = document.querySelectorAll('#vinyl-gallery .vinyl');
+      vinyls.forEach(function(vinyl) {
+        vinyl.addEventListener('touchstart', function() {
+          this.style.width = '148px';
+          const nextElement = this.nextElementSibling;
+          if (nextElement && nextElement.classList.contains('title')) {
+            nextElement.style.visibility = 'visible';
+          }
+        });
+        
+        vinyl.addEventListener('touchend', function() {
+          setTimeout(() => {
+            this.style.width = '';
+            const nextElement = this.nextElementSibling;
+            if (nextElement && nextElement.classList.contains('title')) {
+              nextElement.style.visibility = '';
+            }
+          }, 1000);
+        });
+      });
+    });
+  </script>
+</body>
+</html>
